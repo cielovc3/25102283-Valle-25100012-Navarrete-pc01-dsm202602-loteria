@@ -1,19 +1,14 @@
 package pe.esan.loteria.presentation.navigation
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import pe.esan.loteria.data.remote.FirebaseAuthManager
 import pe.esan.loteria.presentation.auth.LoginScreen
 import pe.esan.loteria.presentation.auth.RegistroScreen
+import pe.esan.loteria.presentation.jugada.JugadaScreen
+import pe.esan.loteria.presentation.seguimiento.SeguimientoScreen
 
 @Composable
 fun AppNavGraph() {
@@ -53,30 +48,17 @@ fun AppNavGraph() {
             )
         }
 
-        // TEMPORAL: se reemplaza por JugadaScreen de Italo
         composable(Routes.JUGADA) {
-            PantallaTemporal("Jugada (de Italo)", "Ir al seguimiento") {
-                navController.navigate(Routes.SEGUIMIENTO)
-            }
+            JugadaScreen(
+                onIrASeguimiento = { navController.navigate(Routes.SEGUIMIENTO) },
+                onCerrarSesion = cerrarSesion
+            )
         }
 
-        // TEMPORAL: se reemplaza por SeguimientoScreen de Italo
         composable(Routes.SEGUIMIENTO) {
-            PantallaTemporal("Seguimiento (de Italo)", "Cerrar sesión", cerrarSesion)
+            SeguimientoScreen(
+                onVolver = { navController.popBackStack() }
+            )
         }
-    }
-}
-
-// TEMPORAL: se borra al unir la rama de Italo
-@Composable
-private fun PantallaTemporal(titulo: String, textoBoton: String, onClick: () -> Unit) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(titulo)
-        Text("Sesión: ${FirebaseAuthManager.usuarioActual?.email}")
-        Button(onClick = onClick) { Text(textoBoton) }
     }
 }
