@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "621685992360",
+    "project_id": "practicacielo",
+    "storage_bucket": "practicacielo.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621685992360:android:ae8d4aa92d6bada94e4b9d",
+        "android_client_info": {
+          "package_name": "com.cielo.company"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdmaCuW-O1kT8iCGtybZkuOP4sqK344HQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621685992360:android:9e4e7429c94bdd4b4e4b9d",
+        "android_client_info": {
+          "package_name": "pe.esan.loteria"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdmaCuW-O1kT8iCGtybZkuOP4sqK344HQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
